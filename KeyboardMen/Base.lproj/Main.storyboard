@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCR-Bj-cTe" userLabel="Cover View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="E78-CP-G1s" appends="YES" id="EcV-Xt-FAb"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBN-oM-89n" userLabel="Base View">
+                                <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TnW-gL-CLn" userLabel="Test">
+                                        <rect key="frame" x="164.5" y="12" width="46" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.82097989599999999" blue="0.40981458310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="1iX-l4-0Pf"/>
+                                    <constraint firstItem="TnW-gL-CLn" firstAttribute="centerX" secondItem="WBN-oM-89n" secondAttribute="centerX" id="9I0-1Z-4Js"/>
+                                    <constraint firstItem="TnW-gL-CLn" firstAttribute="centerY" secondItem="WBN-oM-89n" secondAttribute="centerY" id="Xe1-YY-464"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PCR-Bj-cTe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2Y3-JI-6jA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WBN-oM-89n" secondAttribute="bottom" id="Njp-N7-mci"/>
+                            <constraint firstItem="PCR-Bj-cTe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aXc-k4-Pmv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PCR-Bj-cTe" secondAttribute="bottom" id="jdY-to-ies"/>
+                            <constraint firstAttribute="trailing" secondItem="PCR-Bj-cTe" secondAttribute="trailing" id="ndG-s4-yCa"/>
+                            <constraint firstItem="WBN-oM-89n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qDV-zM-0mM"/>
+                            <constraint firstAttribute="trailing" secondItem="WBN-oM-89n" secondAttribute="trailing" id="qEJ-lC-Rpb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="baseViewBottomConstraint" destination="Njp-N7-mci" id="ofm-qH-AzG"/>
+                        <outlet property="coverView" destination="PCR-Bj-cTe" id="Aio-ev-T4w"/>
+                        <outlet property="testField" destination="TnW-gL-CLn" id="YsB-b7-hXy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="E78-CP-G1s">
+                    <connections>
+                        <action selector="coverViewDidTapped:" destination="BYZ-38-t0r" id="GZv-GT-LmB"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-36" y="120.08995502248877"/>
+        </scene>
+    </scenes>
+</document>
