@@ -32,24 +32,20 @@
 }
 
 - (void)keyboardWillShow:(NSNotification *)n {
-    NSLog(@"---------------------will show-----------------");
     [self handleKeyboardWithNotification:n keyboardAction:WCKeyboardActionShow];
 }
 
 - (void)keyboardWillHide:(NSNotification *)n {
-    NSLog(@"---------------------will hide-----------------");
     [self handleKeyboardWithNotification:n keyboardAction:WCKeyboardACtionHide];
 }
 
 - (void)keyboardWillChangeFrame:(NSNotification *)n {
-    NSLog(@"---------------------will change frame-----------------");
     if (self.keyboardInfo && self.keyboardInfo.keyboardAction == WCKeyboardActionShow) {
         [self handleKeyboardWithNotification:n keyboardAction:WCKeyboardActionShow];
     }
 }
 
 - (void)handleKeyboardWithNotification:(NSNotification *)n keyboardAction:(WCKeyboardAction)keyboardAction {
-    NSLog(@"%@", n);
     NSDictionary *userInfo = n.userInfo;
     if (userInfo) {
         NSTimeInterval animationDuration = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
@@ -68,7 +64,7 @@
                                                                        height:currentKeyboardHeight
                                                               heightIncrement:heightIncrement
                                                                keyboardAction:keyboardAction
-                                                         isSameKeyboardAction: isSameKeyboardAction];
+                                                         isSameKeyboardAction:isSameKeyboardAction];
     }
 }
 
